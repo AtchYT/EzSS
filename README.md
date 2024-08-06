@@ -1,6 +1,6 @@
 # EzSS
 ![Ejemplo de EzSS](https://i.imgur.com/5WyzAfs.png)
-Versión actual: 1.0.0
+Versión actual: 1.1.0
 
 Lenguajes: Batch y Powershell
 
