@@ -2,7 +2,7 @@
 Versión actual: 1.0.0
 Lenguajes: Batch y Powershell
 
-https://i.imgur.com/DZANmYK.png
+![Ejemplo de EzSS](https://i.imgur.com/DZANmYK.png)
 
 Virustotal:
 - EzSS.bat -> https://www.virustotal.com/gui/file/5cdd9e47d992bef3fdd96e57114012968c939e44c96a9df2c9b59eab550e71d9?nocache=1
