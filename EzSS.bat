@@ -1,4 +1,4 @@
 @echo off
-title "EzSS · v1.1.1 | Launcher"
+title EzSS - v1.1.2
 
-powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""EzSS.ps1""' -Verb RunAs}"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0EzSS.ps1""' -Verb RunAs}"
