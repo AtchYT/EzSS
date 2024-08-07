@@ -13,7 +13,19 @@ Para emplear la herramienta:
 - Hacer doble clic izquierdo sobre el EzSS.bat
 - Clic derecho sobre el EzSS.bat y "Abrir"
 
-NOTA:
+AVISO: Debido a que la herramienta de momento no está firmada digitalmente seltará una advertencia del SmartScreen como el siguiente ejemplo:
+
+Solo deben presionar: Mas información
+
+![Ejemplo SmartScreen](https://i.imgur.com/1xB96VW.png)
+
+A continuación: presionar Ejecutar de todas formas
+
+![Ejemplo Ejecutar SmartScreen](https://i.imgur.com/HEesBfs.png)
+
+
+
+CONFIANZA:
 ![Ejemplo de Activacion de la ejecucion de scripts de powershell](https://i.imgur.com/sz3KAlN.png)
 1. Si el usuario no confia en el ejecutable del EzSS.bat o en la herramienta en sí por el SmartScreen de Windows, deberan hacer WIN + R > Escribir powershell > CTRL + SHIFT (Mayusculas) + ENTER (Intro) > Ejecutar el siguiente comando:
 - Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
