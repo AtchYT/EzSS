@@ -93,15 +93,25 @@ function Check-Process {
     }
 }
 
+$programs = @(
+    @{ Name = "obs64"; DisplayName = "OBS Studio" },
+    @{ Name = "GameBar"; DisplayName = "Xbox Game Bar" },
+    @{ Name = "Streamlabs OBS"; DisplayName = "Streamlabs OBS" },
+    @{ Name = "NVIDIA Share"; DisplayName = "NVIDIA GeForce Experience" },
+    @{ Name = "Bandicam"; DisplayName = "Bandicam" },
+    @{ Name = "Medal"; DisplayName = "Medal" }
+)
+
 $activePrograms = @()
 foreach ($program in $programs) {
-    $ccsult = Check-Process -processName $program.Name -displayName $program.DisplayName
-    if ($ccsult.IsRunning) {
-        $activePrograms += $ccsult.Name
+    $result = Check-Process -processName $program.Name -displayName $program.DisplayName
+    if ($result.IsRunning) {
+        $activePrograms += $result.Name
     }
 }
 
 try {
+    Show-Banner
     if ($activePrograms.Count -gt 0) {
         [System.Media.SystemSounds]::Asterisk.Play()
         Start-Sleep -Milliseconds 750
@@ -114,22 +124,10 @@ try {
         [System.Media.SystemSounds]::Asterisk.Play()
         Write-Host "Hay un software de grabacion activo: $($activePrograms -join ', ')" -ForegroundColor $rr
         Get-WmiObject Win32_ComputerSystemProduct | Select-Object UUID | Format-Table -AutoSize
+        Write-Host "Cerrando en 60 segundos..." -ForegroundColor $rr
         Start-Sleep -Milliseconds 60000
         exit
     }
-
-    Show-Banner
-    
-    $programs = @(
-    @{ Name = "obs64"; DisplayName = "OBS Studio" },
-    @{ Name = "GameBar"; DisplayName = "Xbox Game Bar" },
-    @{ Name = "Streamlabs OBS"; DisplayName = "Streamlabs OBS" },
-    @{ Name = "NVIDIA Share"; DisplayName = "NVIDIA GeForce Experience" },
-    @{ Name = "Bandicam"; DisplayName = "Bandicam" },
-    @{ Name = "Medal"; DisplayName = "Medal" }
-
-    )
-
     Show-Menu
     while ($true) {
         Show-Prompt
