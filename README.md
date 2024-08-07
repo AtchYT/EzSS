@@ -16,6 +16,8 @@ Para emplear la herramienta:
 NOTA:
 1. Si el usuario no confia en el ejecutable del EzSS.bat o en la herramienta en sí por el SmartScreen de Windows, deberan hacer WIN + R > Escribir powershell > CTRL + SHIFT (Mayusculas) + ENTER (Intro) > Ejecutar el siguiente comando:
 - $originalPolicy = Get-ExecutionPolicy; Set-ExecutionPolicy Unrestricted -Scope Process -Force
+A continuación, solo deben de hacer clic derecho y presionar "Ejecutar con Powershell"
 
 2. Despues de acabar de usar la herramienta deberan hacer WIN + R > Escribir powershell > CTRL + SHIFT (Mayusculas) + ENTER (Intro) > Ejecutar el siguiente comando:
 - $originalPolicy = Get-ExecutionPolicy; Set-ExecutionPolicy Restricted -Scope Process -Force
+
