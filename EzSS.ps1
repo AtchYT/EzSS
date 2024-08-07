@@ -10,7 +10,7 @@ function Set-ConsoleTitle {
     $host.ui.RawUI.WindowTitle = $Title
 }
 
-Set-ConsoleTitle "EzSS - v1.1.1"
+Set-ConsoleTitle "EzSS - v1.1.2"
 
 function Clear-Host {
     [System.Console]::Clear()
@@ -113,8 +113,8 @@ foreach ($program in $programs) {
 try {
     Show-Banner
     if ($activePrograms.Count -gt 0) {
-        Set-ConsoleTitle "EzSS - v1.1.1 | ERROR: $($activePrograms -join ', ') | Cerrando en 60 segundos..."
-        Write-Host "Hay un software de grabacion activo: $($activePrograms -join ', ')" -ForegroundColor $rr
+        Set-ConsoleTitle "EzSS - v1.1.2 | ERROR: $($activePrograms -join ', ') | Cerrando en 60 segundos..."
+        Write-Host "Hay uno o mas softwares de grabacion / voz ejecutandose: $($activePrograms -join ', ')" -ForegroundColor $rr
         Get-WmiObject Win32_ComputerSystemProduct | Select-Object UUID | Format-Table -AutoSize
         [System.Media.SystemSounds]::Asterisk.Play()
         Start-Sleep -Milliseconds 750
