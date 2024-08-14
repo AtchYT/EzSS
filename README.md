@@ -9,6 +9,8 @@ Requesitos:
 
 NOTA: Si usas AnyDesk, el que está siendo escaneado debe presionar "Solicitar derechos ampliados". Cuando la herramienta solicite a Windows Powershell ejecutarse como administrador simplemente presiona "Si", la herramienta NO puede ejecutarse sin administrador. Si el usuario no confía o se niega, depende del servidor deben banearlo o emplear los métodos tradicionales (Antes de banearlo, leer aviso y confianza)
 
+Detección completa de Sword AS (Sword Anti ScreenShare) | https://github.com/AtchYT/SwordAS
+
 Para emplear la herramienta:
 - Hacer doble clic izquierdo sobre el EzSS.bat
 - Clic derecho sobre el EzSS.bat y "Abrir"
