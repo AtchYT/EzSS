@@ -1,5 +1,5 @@
 # EzSS
-![Ejemplo de EzSS](https://i.imgur.com/l9JcIK9.png)
+![Ejemplo de EzSS](https://i.imgur.com/qNRAboj.png)
 Versión actual: 2.0.0
 
 Lenguajes: Batch y Powershell
@@ -16,8 +16,6 @@ Para emplear la herramienta:
 AVISO: Debido a que la herramienta de momento no está firmada digitalmente saltará una advertencia del Microsoft Windows Defender SmartScreen como el siguiente ejemplo:
 
 Solo deben presionar: Mas información
-
-![Ejemplo SmartScreen](https://i.imgur.com/qNRAboj.png)
 
 A continuación: presionar Ejecutar de todas formas
 
