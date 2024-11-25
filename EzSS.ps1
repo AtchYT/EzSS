@@ -10,7 +10,7 @@ function Set-ConsoleTitle {
     $host.ui.RawUI.WindowTitle = $Title
 }
 
-Set-ConsoleTitle "EzSS - v1.1.2"
+Set-ConsoleTitle "EzSS - v2.0.0"
 
 function Clear-Host {
     [System.Console]::Clear()
@@ -26,7 +26,11 @@ function Show-Banner {
 |                  / /___  / /____/ /__/ /                  |
 |                 /_____/ /___/____/____/                   |
 |                                                           |
-|                  discord.inotatch.com                     |
+|-----------------------------------------------------------|
+|                                                           |
+|                    dsc.gg/BackGuards                      |
+|                                                           |
+|                   by BackGuards Studio                    |
 |                                                           |
 +-----------------------------------------------------------+
 "@
@@ -36,20 +40,24 @@ function Show-Banner {
 function Show-Menu {
     $listopt = @"
 
- 1 - UUID
- 2 - Papelera de reciclaje
- 3 - Elementos recientes
- 4 - Prefetch
- 5 - System Informer
- 6 - Everything
- 7 - Recuva
 
--------------------------------------
-
- cls - Limpiar pantalla
- clear - Limpiar pantalla
- exit - Salir de EzSS
-
++---------------------------+
+|                           |
+|    1 - UUID               |   
+|    2 - Recycle Bin        |
+|    3 - Recent elements    |
+|    4 - Prefetch           |
+|    5 - System Informer    |
+|    6 - Everything         |
+|    7 - Recuva             |
+|                           |
+|---------------------------|
+|                           |
+|  cls - Clear screen       |
+|  clear - Clear screen     |
+|  exit - Exits from EzSS   |
+|                           |
++---------------------------+
 "@
     Write-Host $listopt -ForegroundColor $cc
 }
@@ -59,20 +67,24 @@ function Show-Menu2 {
     Show-Banner
     $listopt = @"
 
- 1 - UUID
- 2 - Papelera de reciclaje
- 3 - Elementos recientes
- 4 - Prefetch
- 5 - System Informer
- 6 - Everything
- 7 - Recuva
 
--------------------------------------
-
- cls - Limpiar pantalla
- clear - Limpiar pantalla
- exit - Salir de EzSS
-
++---------------------------+
+|                           |
+|    1 - UUID               |   
+|    2 - Recycle Bin        |
+|    3 - Recent elements    |
+|    4 - Prefetch           |
+|    5 - System Informer    |
+|    6 - Everything         |
+|    7 - Recuva             |
+|                           |
+|---------------------------|
+|                           |
+|  cls - Clear screen       |
+|  clear - Clear screen     |
+|  exit - Exits from EzSS   |
+|                           |
++---------------------------+
 "@
     Write-Host $listopt -ForegroundColor $cc
 }
@@ -98,6 +110,7 @@ $programs = @(
     @{ Name = "GameBar"; DisplayName = "Xbox Game Bar" },
     @{ Name = "Streamlabs OBS"; DisplayName = "Streamlabs OBS" },
     @{ Name = "NVIDIA Share"; DisplayName = "NVIDIA GeForce Experience" },
+    @{ Name = "NVIDIA app"; DisplayName = "NVIDIA App" },
     @{ Name = "Bandicam"; DisplayName = "Bandicam" },
     @{ Name = "Medal"; DisplayName = "Medal" }
 )
@@ -113,8 +126,8 @@ foreach ($program in $programs) {
 try {
     Show-Banner
     if ($activePrograms.Count -gt 0) {
-        Set-ConsoleTitle "EzSS - v1.1.2 | ERROR: $($activePrograms -join ', ') | Cerrando en 60 segundos..."
-        Write-Host "Hay uno o mas softwares de grabacion / voz ejecutandose: $($activePrograms -join ', ')" -ForegroundColor $rr
+        Set-ConsoleTitle "EzSS - v2.0.0 | Error: $($activePrograms -join ', ') | Closing on 60 seconds..."
+        Write-Host "There are a recording software running on the system: $($activePrograms -join ', ')" -ForegroundColor $rr
         Get-WmiObject Win32_ComputerSystemProduct | Select-Object UUID | Format-Table -AutoSize
         [System.Media.SystemSounds]::Asterisk.Play()
         Start-Sleep -Milliseconds 750
@@ -125,7 +138,7 @@ try {
         [System.Media.SystemSounds]::Asterisk.Play()
         Start-Sleep -Milliseconds 500
         [System.Media.SystemSounds]::Asterisk.Play()
-        Write-Host "Cerrando en 60 segundos..." -ForegroundColor $rr
+        Write-Host "Closing on 60 seconds..." -ForegroundColor $rr
         Start-Sleep -Milliseconds 60000
         exit
     }
@@ -137,45 +150,49 @@ try {
         switch ($ezss) {
             "1" {
                 Write-Host
+                Write-Host "UUID from the computer:" -ForegroundColor $cc
                 Get-WmiObject Win32_ComputerSystemProduct | Select-Object UUID | Format-Table -AutoSize
             }
 
             "2" {
+                Write-Host "Reclycle Bin modification date:" -ForegroundColor $cc
                 Get-ChildItem -Path "C:\`$Recycle.Bin" -Force | ForEach-Object {
                     "{0} {1} {2}" -f $_.Name, $_.LastWriteTime.ToString("yyyy-MM-dd"), $_.LastWriteTime.ToString("HH:mm:ss")
                 }
             }
 
             "3" {
+                Write-Host "Opening the recent elements folder:" -ForegroundColor $cc
                 Start-Process "explorer.exe" -ArgumentList "shell:recent"
             }
 
             "4" {
+                Write-Host "Opening the prefetch folder:" -ForegroundColor $cc
                 Start-Process "explorer.exe" -ArgumentList "C:\Windows\Prefetch"
             }
 
             "5" {
-                $url = "https://kumisystems.dl.sourceforge.net/project/systeminformer/systeminformer-3.0.7660-release-setup.exe?viasf=1"
+                $url = "https://altushost-swe.dl.sourceforge.net/project/systeminformer/systeminformer-3.1.24298-release-setup.exe?viasf=1"
                 $ruta_descarga = Join-Path $DOWNLOADS_DIR "systeminformer-3.0.7660-release-setup.exe"
-                Write-Host "Descargando el System Informer..." -ForegroundColor $cc
+                Write-Host "Downloading System Informer..." -ForegroundColor $cc
                 Invoke-WebRequest -Uri $url -OutFile $ruta_descarga
-                Write-Host "Se ha descargado el System Informer correctamente" -ForegroundColor $gg
+                Write-Host "System Informer has been downloaded sucessfully" -ForegroundColor $gg
             }
 
             "6" {
-                $url = "https://www.voidtools.com/Everything-1.4.1.1026.x64-Setup.exe"
+                $url = "https://www.voidtools.com/Everything-1.4.1.1026.x86-Setup.exe"
                 $ruta_descarga = Join-Path $DOWNLOADS_DIR "Everything-1.4.1.1026.x64-Setup.exe"
-                Write-Host "Descargando el Everything..." -ForegroundColor $cc
+                Write-Host "Downloading Everything..." -ForegroundColor $cc
                 Invoke-WebRequest -Uri $url -OutFile $ruta_descarga
-                Write-Host "Se ha descargado el Everything correctamente" -ForegroundColor $gg
+                Write-Host "Everything has been downloaded sucessfully" -ForegroundColor $gg
             }
 
             "7" {
                 $url = "https://download.ccleaner.com/rcsetup154.exe"
                 $ruta_descarga = Join-Path $DOWNLOADS_DIR "rcsetup154.exe"
-                Write-Host "Descargando el Recuva..." -ForegroundColor $cc
+                Write-Host "Downloading Recuva..." -ForegroundColor $cc
                 Invoke-WebRequest -Uri $url -OutFile $ruta_descarga
-                Write-Host "Se ha descargado el Recuva correctamente" -ForegroundColor $gg
+                Write-Host "Recuva has been downloaded sucessfully" -ForegroundColor $gg
             }
 
             { $_ -in "cls", "clear" } {
