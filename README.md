@@ -1,6 +1,6 @@
 # EzSS
 ![Ejemplo de EzSS](https://i.imgur.com/l9JcIK9.png)
-Versión actual: 1.1.2
+Versión actual: 2.0.0
 
 Lenguajes: Batch y Powershell
 
@@ -17,7 +17,7 @@ AVISO: Debido a que la herramienta de momento no está firmada digitalmente salt
 
 Solo deben presionar: Mas información
 
-![Ejemplo SmartScreen](https://i.imgur.com/1xB96VW.png)
+![Ejemplo SmartScreen](https://i.imgur.com/qNRAboj.png)
 
 A continuación: presionar Ejecutar de todas formas
 
