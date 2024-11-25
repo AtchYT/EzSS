@@ -31,7 +31,6 @@ CONFIANZA:
 A continuación, solo deben de hacer clic derecho y presionar "Ejecutar con Powershell"
 
 ![Ejemplo de Activacion de la ejecucion de scripts de powershell](https://i.imgur.com/sz3KAlN.png)
-
 2. Despues de acabar de usar la herramienta deberan hacer WIN + R > Escribir powershell > CTRL + SHIFT (Mayusculas) + ENTER (Intro) > Ejecutar el siguiente comando:
 - Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Undefined
 
