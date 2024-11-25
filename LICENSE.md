@@ -1,5 +1,7 @@
 ## MIT License
 
+# © BackGuards Studio · 2024
+
 # © iNotAtch · 2024
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
